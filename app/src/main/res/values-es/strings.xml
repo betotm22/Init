@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">"Proyecto inicial"</string>
+
+    <!--ACTIVITY TITLES-->
+    <string name="activity_title_home">"Inicio"</string>
+    <string name="activity_title_">"_"</string>
+
+    <!--FRAGMENT TITLES-->
+    <string name="fragment_title_home">"Inicio"</string>
+    <string name="fragment_title_">"_"</string>
+
+    <!--MENU LABELS-->
+    <string name="menu_title_home">"Inicio"</string>
+    <string name="menu_title_dashboard">"Menú principal"</string>
+    <string name="menu_title_notifications">"Notificaciones"</string>
+    <string name="menu_title_settings">"Configuración"</string>
+    <string name="menu_title_">"_"</string>
+
+    <!--BUTTON LABELS-->
+    <string name="button_label_save">"Guardar"</string>
+    <string name="button_label_next">"Siguiente"</string>
+    <string name="button_label_back">"Atrás"</string>
+    <string name="button_label_send">"Enviar"</string>
+    <string name="button_label_accept">"Aceptar"</string>
+    <string name="button_label_cancel">"Cancelar"</string>
+    <string name="button_label_ok">"OK"</string>
+    <string name="button_label_yes">"Sí"</string>
+    <string name="button_label_no">"No"</string>
+    <string name="button_label_start">"Iniciar"</string>
+
+    <string name="button_label_login">"Iniciar sesión"</string>
+    <string name="button_label_logout">"Cerrar sesión"</string>
+    <string name="button_label_register">"Registro"</string>
+    <string name="button_label_forgot_pass">"¿Olvidaste tu contraseña?"</string>
+
+    <string name="button_label_">"_"</string>
+
+    <!--TEXT VIEW LABELS-->
+    <string name="label_sing_in">"Entrar"</string>
+    <string name="label_already_member">"¿Ya tienes una cuenta?\u0020"</string>
+    <string name="label_user">"Usuario"</string>
+    <string name="label_email">"Correo electrónico"</string>
+    <string name="label_pass">"Contraseña"</string>
+    <string name="label_address">"Dirección"</string>
+    <string name="label_help">"Ayuda"</string>
+    <string name="label_main_menu">"Menú principal"</string>
+    <string name="label_home">"Inicio"</string>
+    <string name="label_share_via">"Compartir vía…"</string>
+    <string name="label_">"_"</string>
+
+    <!--DIALOG TITLES-->
+    <string name="dialog_title_error">"Error"</string>
+    <string name="dialog_title_success">"Correcto"</string>
+    <string name="dialog_title_sing_in">"Entrar"</string>
+    <string name="dialog_title_login">"Iniciar sesión"</string>
+    <string name="dialog_title_logout">"Cerrar sesión"</string>
+    <string name="dialog_title_register">"Registro"</string>
+    <string name="dialog_title_main">"Inicio"</string>
+    <string name="dialog_title_recover_pass">"Recuperar contraseña"</string>
+    <string name="dialog_title_send_email">"Enviar correo electrónico"</string>
+    <string name="dialog_title_">"_"</string>
+
+
+    <!--DIALOG MESSAGES-->
+    <string name="dialog_message_loading">"Cargando…"</string>
+    <string name="dialog_message_error_conn">"Error de conexión"</string>
+    <string name="dialog_message_success_sent">"Enviado correctamente"</string>
+    <string name="dialog_message_fail_sent">"Error al enviar"</string>
+    <string name="dialog_message_progress">"Enviando %1$d de %2$d"</string>
+    <string name="dialog_message_percentage">"%1$d %"</string>
+    <string name="dialog_message_logout">"¿Desea cerrar sesión?"</string>
+    <string name="dialog_message_">"_"</string>
+
+
+    <!--VIEW'S ERROR MESSAGES-->
+    <string name="error_message_empty_field">"Campo vacío"</string>
+    <string name="error_message_email_match">"Correos electrónicos no coinciden"</string>
+    <string name="error_message_pass_match">"Contraseñas no coinciden"</string>
+    <string name="error_message_email_format">"Correo electrónico inválido"</string>
+    <string name="error_message_pass_format">"Contraseña inválida"</string>
+    <string name="error_message_">"_"</string>
+
+    <!--TOAST/SNACK MESSAGES-->
+    <string name="toast_updated_success">"Cargado correctamente"</string>
+    <string name="toast_updated_error">"Error al cargar"</string>
+    <string name="snack_error_connection">"Error de conexión"</string>
+    <string name="toast_">"_"</string>
+    <string name="snack_">"_"</string>
+
+    <!--HINTS-->
+    <string name="hint_email">"Correo electrónico"</string>
+    <string name="hint_password">"Contraseña"</string>
+    <string name="hint_c_password">"Confirmar contraseña"</string>
+    <string name="hint_address">"Dirección"</string>
+    <string name="hint_first_name">"Nombre"</string>
+    <string name="hint_last_name">"Apellido"</string>
+    <string name="hint_user_name">"Nombre de usuario"</string>
+    <string name="hint_id">"Identificador"</string>
+    <string name="hint_city">"Ciudad"</string>
+    <string name="hint_zip_code">"Código postal"</string>
+    <string name="hint_">"_"</string>
+    <string name="snack_success_connection">Success</string>
+
+</resources>
