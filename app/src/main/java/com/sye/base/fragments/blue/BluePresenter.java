@@ -7,7 +7,7 @@ public class BluePresenter implements BlueContract.Presenter {
 
     private BlueContract.View view;
 
-    public BluePresenter(BlueContract.View view) {
+    BluePresenter(BlueContract.View view) {
         this.view = view;
     }
 

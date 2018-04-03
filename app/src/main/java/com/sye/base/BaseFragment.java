@@ -354,31 +354,6 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
     }
 
     @Override
-    public void sendBack() {
-
-    }
-
-    @Override
-    public void sendBack(String message) {
-
-    }
-
-    @Override
-    public void sendBack(int value) {
-
-    }
-
-    @Override
-    public void sendBack(boolean flag) {
-
-    }
-
-    @Override
-    public void sendBack(Object object) {
-
-    }
-
-    @Override
     public void sendBack(List<Object> list) {
 
     }
