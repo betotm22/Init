@@ -1,10 +1,13 @@
 package com.sye.base.network;
 
+import com.sye.base.BuildConfig;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BaseClient {
@@ -27,6 +30,7 @@ public class BaseClient {
         return new Retrofit.Builder()
                 .baseUrl(ROOT_URL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(httpClient.build())
                 .build();
     }
@@ -36,7 +40,7 @@ public class BaseClient {
      *
      * @return API Service
      */
-    static RestApi getApiService(String ROOT_URL) {
-        return getRetrofitInstance(ROOT_URL).create(RestApi.class);
+    public static <T> T getApiService(Class clazz) {
+        return getRetrofitInstance(BuildConfig.BASE_URL).create((Class<T>) clazz);
     }
 }

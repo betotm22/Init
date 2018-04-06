@@ -79,8 +79,8 @@
 
     <!--VIEW'S ERROR MESSAGES-->
     <string name="error_message_empty_field">Empty field</string>
-    <string name="error_message_email_match">E-mails don\'t match</string>
-    <string name="error_message_pass_match">Passwords don\'t match</string>
+    <string name="error_message_email_match">E-mails don\'type match</string>
+    <string name="error_message_pass_match">Passwords don\'type match</string>
     <string name="error_message_email_format">Invalid e-mail</string>
     <string name="error_message_pass_format">Invalid password</string>
     <string name="error_message_">_</string>

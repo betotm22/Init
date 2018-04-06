@@ -1,11 +1,18 @@
 package com.sye.base.fragments.blue;
 
-import com.sye.base.network.BackendService;
-import com.sye.base.network.SN;
+import com.sye.base.R;
+import com.sye.base.network.RequestBuilder;
+
+import java.util.List;
+
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class BluePresenter implements BlueContract.Presenter {
 
     private BlueContract.View view;
+    private BlueServices service;
 
     BluePresenter(BlueContract.View view) {
         this.view = view;
@@ -13,6 +20,8 @@ public class BluePresenter implements BlueContract.Presenter {
 
     @Override
     public void create() {
+        RequestBuilder<BlueServices> builder = new RequestBuilder<>();
+        service = builder.createRequest(BlueServices.class);
         //Init database, prepare rest, etc.
     }
 
@@ -24,7 +33,29 @@ public class BluePresenter implements BlueContract.Presenter {
     @Override
     public void fetchData() {
         view.progress(true);
-        BackendService.createRequest(null, SN.SN_LISTS_RESPONSE);
+
+        service.getUsers("")
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<List<BlueObject>>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        view.showError(R.string.snack_error_connection);
+                    }
+
+                    @Override
+                    public void onNext(List<BlueObject> listResponse) {
+                        view.showSuccess(R.string.dialog_message_success_sent);
+                        view.progress(false);
+                    }
+                });
+
+
         //Call to service, search on database, etc.
     }
 

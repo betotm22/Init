@@ -14,14 +14,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sye.base.network.RestEvent;
 import com.sye.base.util.BaseContractView;
 import com.sye.base.util.Callback;
 import com.sye.base.util.Fonts;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.SubscriberExceptionEvent;
 
 import java.util.List;
 
@@ -33,7 +30,6 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
 
     //region VARIABLES
 
-    private boolean unregisterOnPause = false;
     private FragmentManager fragmentManager;
     private final String CONST_PREFIX = "CONSTANT_";
     private Callback callback;
@@ -71,56 +67,9 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
         fragmentManager = getFragmentManager();
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (unregisterOnPause && !EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().register(this);
-            //Log.i("EVENT_BUS", "Class " + getClass().getSimpleName() + " registered");
-        }
-    }
-
-    @Override
-    public void onPause() {
-        if (unregisterOnPause && EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-            //Log.i("EVENT_BUS", "Class " + getClass().getSimpleName() + " unregistered");
-        }
-        super.onPause();
-    }
-
-    @Override
-    public void onDestroy() {
-        if (EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-            //Log.i("EVENT_BUS", "Class " + getClass().getSimpleName() + " unregistered");
-        }
-        super.onDestroy();
-    }
-
     //endregion
 
     //region UTIL
-
-    public void registerForEvent(boolean unregisterOnPause) {
-        if (!EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().register(this);
-            this.unregisterOnPause = unregisterOnPause;
-        }
-    }
-
-    public void unregisterForEvent() {
-        if (EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-        }
-    }
-
-    @Subscribe
-    public void onEvent(SubscriberExceptionEvent event) {
-        showError(R.string.snack_error_connection, false);
-        event.throwable.printStackTrace();
-        EventBus.getDefault().post(new RestEvent(false, -1, "error", "error"));
-    }
 
     public void setCallback(Callback callback){
         this.callback = callback;
@@ -208,7 +157,7 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
         View snackbarView = snackbar.getView();
         snackbarView.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.success));
         ((TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text))
-                .setTextColor(getResources().getColor(R.color.text_grey));
+                .setTextColor(getResources().getColor(R.color.text_primary_dark));
         snackbar.show();
     }
 

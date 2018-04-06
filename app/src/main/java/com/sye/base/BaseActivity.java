@@ -18,7 +18,6 @@ public class BaseActivity extends AppCompatActivity implements Callback {
 
     //region VARIABLES
 
-    private boolean unregisterOnPause = false;
     private FragmentManager fragmentManager;
     private final String CONST_PREFIX = "CONSTANT_";
     private String currentTag = "current";
@@ -31,33 +30,6 @@ public class BaseActivity extends AppCompatActivity implements Callback {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fragmentManager = getSupportFragmentManager();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (unregisterOnPause && !EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().register(this);
-            //Log.i("EVENT_BUS", "Class " + getClass().getSimpleName() + " registered");
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        if (unregisterOnPause && EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-            //Log.i("EVENT_BUS", "Class " + getClass().getSimpleName() + " unregistered");
-        }
-        super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        if (EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-            //Log.i("EVENT_BUS", "Class " + getClass().getSimpleName() + " unregistered");
-        }
-        super.onDestroy();
     }
 
     //endregion
@@ -78,24 +50,6 @@ public class BaseActivity extends AppCompatActivity implements Callback {
      */
     public void li(String message) {
         Log.i("LOG_INFO", message);
-    }
-
-    //endregion
-
-    //region UTIL
-
-    /**
-     * Register the class to listen for events thrown by EventBus.
-     * @param unregisterOnPause True if necessary to unregister the class when
-     *                          onPause method is called, else the unregister happens
-     *                          in onDestroy method.
-     */
-    public void registerForEvents(boolean unregisterOnPause) {
-        if (!EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().register(this);
-            this.unregisterOnPause = unregisterOnPause;
-            //Log.i("EVENT_BUS", "Class " + getClass().getSimpleName() + " registered");
-        }
     }
 
     //endregion

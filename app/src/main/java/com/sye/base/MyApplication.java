@@ -20,10 +20,10 @@ public class MyApplication extends Application {
     }
 
     public static void auth(String auth) {
-        Pref.putString(application, Set.PREF_AUTH, auth);
+        Pref.putString(Set.PREF_AUTH, auth);
     }
 
     public static String auth() {
-        return Pref.getSharedString(application, Set.PREF_AUTH);
+        return Pref.getSharedString(Set.PREF_AUTH);
     }
 }
