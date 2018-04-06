@@ -1,6 +1,6 @@
 package com.sye.base.network;
 
-import com.sye.base.fragments.blue.BlueModel;
+import com.sye.base.fragments.blue.BlueObject;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import retrofit2.http.Path;
 public interface RestApi {
 
     @GET("catalogs/user")
-    Call<BlueModel> getService();
+    Call<BlueObject> getService();
 
     @GET("catalogs/user")
-    Call<List<BlueModel>> getUsers(@Header("Authorization") String auth);
+    Call<List<BlueObject>> getUsers(@Header("Authorization") String auth);
 
     @DELETE("ws/delete_service")
     Call<Void> deleteService(@Path("item_id") String itemId);

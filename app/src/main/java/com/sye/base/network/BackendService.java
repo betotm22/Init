@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.Intent;
 
 import com.sye.base.MyApplication;
-import com.sye.base.fragments.blue.BlueModel;
+import com.sye.base.fragments.blue.BlueObject;
 import com.sye.base.util.Set;
 
 import org.greenrobot.eventbus.EventBus;
@@ -77,14 +77,14 @@ public class BackendService extends IntentService {
 
         switch (type) {
             case SN.SN_SERVICE: //region
-                Response<BlueModel> response = service.getService().execute();
+                Response<BlueObject> response = service.getService().execute();
                 restEvent = new RestEvent(response.body(), response.isSuccessful(), response.code(),
                         response.message(), type);
                 break; //endregion
 
             case SN.SN_LISTS_RESPONSE: //region
-                BlueModel request = (BlueModel) params;
-                Response<List<BlueModel>> statesResponse = service.getUsers(auth).execute();
+                BlueObject request = (BlueObject) params;
+                Response<List<BlueObject>> statesResponse = service.getUsers(auth).execute();
 
                 List<Serializable> serializedStatesResponse = new ArrayList<>();
                 serializedStatesResponse.addAll(statesResponse.body());

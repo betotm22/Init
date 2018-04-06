@@ -27,6 +27,11 @@
     <string name="button_label_yes">Yes</string>
     <string name="button_label_no">No</string>
     <string name="button_label_start">Start</string>
+    <string name="button_label_done">Done</string>
+    <string name="button_label_got_it">Got it</string>
+    <string name="button_label_no_thanks">No thanks</string>
+    <string name="button_label_not_now">Not now</string>
+    <string name="button_label_skip">Skip</string>
 
     <string name="button_label_login">Login</string>
     <string name="button_label_logout">Logout</string>
@@ -81,9 +86,9 @@
     <string name="error_message_">_</string>
 
     <!--TOAST/SNACK MESSAGES-->
-    <string name="toast_updated_success">Successfully updated</string>
+    <string name="toast_updated_success">Updated successfully</string>
     <string name="toast_updated_error">Error updating</string>
-    <string name="snack_error_connection">connection_error</string>
+    <string name="snack_error_connection">Connection error</string>
     <string name="toast_">_</string>
     <string name="snack_">_</string>
 

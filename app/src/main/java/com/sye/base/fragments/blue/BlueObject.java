@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class BlueModel implements Serializable /*Parceable*/ {
+public class BlueObject implements Serializable /*Parceable*/ {
     @SerializedName("id")
     private String id;
     @SerializedName("cuadrilla")

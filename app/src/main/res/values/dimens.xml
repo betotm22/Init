@@ -1,11 +1,36 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="component_small_margin">4dp</dimen>
-    <dimen name="component_half_margin">8dp</dimen>
-    <dimen name="component_double_margin">32dp</dimen>
-    <dimen name="component_big_margin">64dp</dimen>
+    <dimen name="screen_edge_margin">16dp</dimen>
+    <dimen name="dialogs_edge_margin">24dp</dimen>
+
+    <dimen name="component_toolbar_height">56dp</dimen>
+    <dimen name="component_subtitles_height">48dp</dimen>
+    <dimen name="component_list_items_height">72dp</dimen>
+    <dimen name="component_custom_menu_items_height">48dp</dimen>
+    <dimen name="component_touch_target_height">48dp</dimen>
+    <dimen name="component_chip_height">32dp</dimen>
+
+    <dimen name="component_half_contents_margin">4dp</dimen>
+    <dimen name="component_contents_margin">8dp</dimen>
+    <dimen name="component_regular_margin">16dp</dimen>
+    <dimen name="component_divider">1dp</dimen>
+
+    <dimen name="corner_radius">2dp</dimen>
+    <dimen name="elevation_card">2dp</dimen>
+    <dimen name="elevation_appbar">4dp</dimen>
+    <dimen name="elevation_floating">6dp</dimen>
+    <dimen name="elevation_menu">8dp</dimen>
+    <dimen name="elevation_modal">16dp</dimen>
+    <dimen name="elevation_dialogs">24dp</dimen>
+
+    <dimen name="text_display_3">56sp</dimen>
+    <dimen name="text_display_2">45sp</dimen>
+    <dimen name="text_display_1">34sp</dimen>
+    <dimen name="text_headline">24sp</dimen>
+    <dimen name="text_title">20sp</dimen>
+    <dimen name="text_subheading">16sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_caption">12sp</dimen>
+    <dimen name="text_buttons">14sp</dimen>
 
 </resources>

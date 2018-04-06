@@ -27,6 +27,11 @@
     <string name="button_label_yes">"Sí"</string>
     <string name="button_label_no">"No"</string>
     <string name="button_label_start">"Iniciar"</string>
+    <string name="button_label_done">Hecho</string>
+    <string name="button_label_got_it">Entendido</string>
+    <string name="button_label_no_thanks">No, gracias</string>
+    <string name="button_label_not_now">Ahora no</string>
+    <string name="button_label_skip">Saltar</string>
 
     <string name="button_label_login">"Iniciar sesión"</string>
     <string name="button_label_logout">"Cerrar sesión"</string>
