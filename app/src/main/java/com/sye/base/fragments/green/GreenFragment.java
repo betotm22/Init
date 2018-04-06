@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.sye.base.BaseFragment;
+import com.sye.base.bases.BaseFragment;
 import com.sye.base.R;
 
 public class GreenFragment extends BaseFragment {

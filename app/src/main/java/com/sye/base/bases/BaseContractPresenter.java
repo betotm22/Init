@@ -1,4 +1,4 @@
-package com.sye.base.util;
+package com.sye.base.bases;
 
 public interface BaseContractPresenter {
 

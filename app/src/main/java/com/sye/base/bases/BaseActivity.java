@@ -1,4 +1,4 @@
-package com.sye.base;
+package com.sye.base.bases;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -7,14 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.sye.base.util.Callback;
+import com.sye.base.R;
 
-import org.greenrobot.eventbus.EventBus;
 import java.util.List;
 
-public class BaseActivity extends AppCompatActivity implements Callback {
+public class BaseActivity extends AppCompatActivity implements SimpleCallback {
 
     //region VARIABLES
 
@@ -75,7 +73,7 @@ public class BaseActivity extends AppCompatActivity implements Callback {
         return fragment.getTag();
     }
 
-    public String addFragment(Fragment fragment, int containerId, Callback callback) {
+    public String addFragment(Fragment fragment, int containerId, SimpleCallback callback) {
 
         fragmentManager.beginTransaction()
                 .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
@@ -118,7 +116,7 @@ public class BaseActivity extends AppCompatActivity implements Callback {
         return currentTag;
     }
 
-    public String addConstantFragment(Fragment fragment, Callback callback) {
+    public String addConstantFragment(Fragment fragment, SimpleCallback callback) {
 
         String tag = CONST_PREFIX + fragment.getClass().getName();
         Fragment constant = fragmentManager.findFragmentByTag(tag);

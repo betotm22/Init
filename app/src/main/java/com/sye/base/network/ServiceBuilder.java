@@ -1,11 +1,11 @@
 package com.sye.base.network;
 
-public class RequestBuilder<T> {
+public class ServiceBuilder<T> {
 
     private T type;
 
     @SuppressWarnings("unchecked")
-    public T createRequest(Class clazz) {
+    public T create(Class clazz) {
         return (T) BaseClient.getApiService(clazz);
     }
 

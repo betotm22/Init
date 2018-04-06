@@ -1,4 +1,4 @@
-package com.sye.base;
+package com.sye.base.bases;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -14,11 +14,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sye.base.util.BaseContractView;
-import com.sye.base.util.Callback;
+import com.sye.base.R;
 import com.sye.base.util.Fonts;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -26,13 +23,13 @@ import java.util.List;
  * Created by qg-roberto on 5/05/17.
  */
 
-public class BaseFragment extends Fragment implements Callback, BaseContractView {
+public class BaseFragment extends Fragment implements SimpleCallback, BaseContractView {
 
     //region VARIABLES
 
     private FragmentManager fragmentManager;
     private final String CONST_PREFIX = "CONSTANT_";
-    private Callback callback;
+    private SimpleCallback callback;
 
     private ProgressDialog progressDialog;
 
@@ -71,11 +68,11 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
 
     //region UTIL
 
-    public void setCallback(Callback callback){
+    public void setCallback(SimpleCallback callback){
         this.callback = callback;
     }
 
-    public Callback getCallback() {
+    public SimpleCallback getCallback() {
         return callback;
     }
 
@@ -197,7 +194,7 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
         return fragment.getTag();
     }
 
-    public String addFragment(Fragment fragment, int viewGroupId, Callback callback) {
+    public String addFragment(Fragment fragment, int viewGroupId, SimpleCallback callback) {
 
         fragmentManager.beginTransaction()
                 .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
@@ -219,7 +216,7 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
      * @param fragment The fragment to add to the container.
      * @return It returns the tag assigned to the fragment so we can find it if necessary.
      */
-    public String addConstantFragment(Fragment fragment, Callback callback) {
+    public String addConstantFragment(Fragment fragment, SimpleCallback callback) {
 
         String tag = CONST_PREFIX + fragment.getClass().getName();
         Fragment constant = fragmentManager.findFragmentByTag(tag);

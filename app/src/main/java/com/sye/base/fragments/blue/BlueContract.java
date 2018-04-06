@@ -1,7 +1,7 @@
 package com.sye.base.fragments.blue;
 
-import com.sye.base.util.BaseContractPresenter;
-import com.sye.base.util.BaseContractView;
+import com.sye.base.bases.BaseContractPresenter;
+import com.sye.base.bases.BaseContractView;
 
 import java.util.List;
 

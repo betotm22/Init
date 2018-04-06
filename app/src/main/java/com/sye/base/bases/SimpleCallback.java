@@ -1,9 +1,9 @@
-package com.sye.base.util;
+package com.sye.base.bases;
 
 
 import java.util.List;
 
-public interface Callback {
+public interface SimpleCallback {
 
     void sendBack(List<Object> list);
     void sendBack(Object ... objects);

@@ -2,7 +2,7 @@ package com.sye.base.activities;
 
 import android.os.Bundle;
 
-import com.sye.base.BaseActivity;
+import com.sye.base.bases.BaseActivity;
 import com.sye.base.R;
 import com.sye.base.fragments.green.GreenFragment;
 import com.sye.base.fragments.blue.BlueFragment;

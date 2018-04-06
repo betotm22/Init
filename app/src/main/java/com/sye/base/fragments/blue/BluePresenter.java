@@ -1,7 +1,7 @@
 package com.sye.base.fragments.blue;
 
 import com.sye.base.R;
-import com.sye.base.network.RequestBuilder;
+import com.sye.base.network.ServiceBuilder;
 
 import java.util.List;
 
@@ -20,8 +20,8 @@ public class BluePresenter implements BlueContract.Presenter {
 
     @Override
     public void create() {
-        RequestBuilder<BlueServices> builder = new RequestBuilder<>();
-        service = builder.createRequest(BlueServices.class);
+        ServiceBuilder<BlueServices> builder = new ServiceBuilder<>();
+        service = builder.create(BlueServices.class);
         //Init database, prepare rest, etc.
     }
 
@@ -55,7 +55,6 @@ public class BluePresenter implements BlueContract.Presenter {
                         view.progress(false);
                     }
                 });
-
 
         //Call to service, search on database, etc.
     }

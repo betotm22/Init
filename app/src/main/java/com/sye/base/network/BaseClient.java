@@ -1,6 +1,7 @@
 package com.sye.base.network;
 
 import com.sye.base.BuildConfig;
+import com.sye.base.util.Set;
 
 import java.util.concurrent.TimeUnit;
 
@@ -40,7 +41,8 @@ public class BaseClient {
      *
      * @return API Service
      */
+    @SuppressWarnings("unchecked")
     public static <T> T getApiService(Class clazz) {
-        return getRetrofitInstance(BuildConfig.BASE_URL).create((Class<T>) clazz);
+        return getRetrofitInstance(Set.BASE_URL).create((Class<T>) clazz);
     }
 }
