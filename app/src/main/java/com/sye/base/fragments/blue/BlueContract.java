@@ -3,6 +3,8 @@ package com.sye.base.fragments.blue;
 import com.sye.base.util.BaseContractPresenter;
 import com.sye.base.util.BaseContractView;
 
+import java.util.List;
+
 public interface BlueContract {
 
     interface Presenter extends BaseContractPresenter {
@@ -10,6 +12,6 @@ public interface BlueContract {
     }
 
     interface View extends BaseContractView {
-        void showData();
+        void showData(List<BlueObject> list);
     }
 }

@@ -51,6 +51,7 @@ public class BluePresenter implements BlueContract.Presenter {
                     @Override
                     public void onNext(List<BlueObject> listResponse) {
                         view.showSuccess(R.string.dialog_message_success_sent);
+                        view.showData(listResponse);
                         view.progress(false);
                     }
                 });
