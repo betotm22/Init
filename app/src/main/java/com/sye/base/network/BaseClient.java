@@ -1,5 +1,7 @@
 package com.sye.base.network;
 
+import com.sye.base.MyApplication;
+import com.sye.base.util.Pref;
 import com.sye.base.util.Set;
 
 import java.util.concurrent.TimeUnit;
@@ -14,7 +16,7 @@ public class BaseClient {
     /**
      * Get Retrofit Instance
      */
-    private static Retrofit getRetrofitInstance(String ROOT_URL) {
+    private static Retrofit getRetrofitInstance(String ROOT_URL, String token) {
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         /**
@@ -22,6 +24,7 @@ public class BaseClient {
          */
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(new HeaderInterceptor("8EXbf00845pd485bPhuvXu01RyWucO/HX7B8HZ/LPUmKJZxcwcXb."));
         httpClient.addInterceptor(logging);
         httpClient.connectTimeout(30, TimeUnit.SECONDS);
         httpClient.readTimeout(30, TimeUnit.SECONDS);
@@ -40,6 +43,6 @@ public class BaseClient {
      */
     @SuppressWarnings("unchecked")
     public static <T> T getApiService(Class<T> clazz) {
-        return getRetrofitInstance(Set.BASE_URL).create(clazz);
+        return getRetrofitInstance(Set.BASE_URL, MyApplication.auth()).create(clazz);
     }
 }

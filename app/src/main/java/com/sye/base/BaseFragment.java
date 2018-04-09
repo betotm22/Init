@@ -376,12 +376,7 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
 
     @Override
     public void progress(boolean show) {
-        if (progressDialog == null) {
-            progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setMessage(getString(R.string.dialog_message_loading));
-        }
-        if (show && !progressDialog.isShowing()) progressDialog.show();
-        else if (progressDialog.isShowing()) progressDialog.dismiss();
+
     }
 
     //endregion

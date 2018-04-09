@@ -1,32 +1,31 @@
 package com.sye.base.network;
 
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.List;
 
-public class RestEvent<R> {
+public class RestEvent {
 
-    private R result;
-
-    private Serializable response;
-    private List<Serializable> responseList;
+    private GenericResponse response;
+    private List<GenericResponse> responseList;
     private boolean success;
     private int code;
     private String message;
     private String classType;
 
-    public RestEvent(R result, boolean success, int code, String message) {
+    public RestEvent(GenericResponse response, boolean success, int code, String message) {
         this.success = success;
         this.code = code;
         this.message = message;
-        this.result = result;
+        this.response = response;
     }
 
-    public RestEvent(List<Serializable> responseList, boolean success, int code, String message, String classType) {
+    public RestEvent(List<GenericResponse> responseList, boolean success, int code, String message) {
         this.responseList = responseList;
         this.success = success;
         this.code = code;
         this.message = message;
-        this.classType = classType;
     }
 
     public RestEvent(boolean success, int code, String message, String classType) {
@@ -39,7 +38,7 @@ public class RestEvent<R> {
     public RestEvent() {
     }
 
-    public Serializable getResponse() {
+    public GenericResponse getResponse() {
         return response;
     }
 
@@ -59,11 +58,8 @@ public class RestEvent<R> {
         return classType;
     }
 
-    public List<Serializable> getResponseList() {
+    public List<GenericResponse> getResponseList() {
         return responseList;
     }
 
-    public R getResult() {
-        return result;
-    }
 }
