@@ -1,5 +1,7 @@
 package com.sye.base.network;
 
+import com.sye.base.util.Set;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -36,7 +38,8 @@ public class BaseClient {
      *
      * @return API Service
      */
-    static RestApi getApiService(String ROOT_URL) {
-        return getRetrofitInstance(ROOT_URL).create(RestApi.class);
+    @SuppressWarnings("unchecked")
+    public static <T> T getApiService(Class<T> clazz) {
+        return getRetrofitInstance(Set.BASE_URL).create(clazz);
     }
 }

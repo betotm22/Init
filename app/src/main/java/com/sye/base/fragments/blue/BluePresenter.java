@@ -1,9 +1,13 @@
 package com.sye.base.fragments.blue;
 
-import com.sye.base.network.BackendService;
-import com.sye.base.network.SN;
 
-public class BluePresenter implements BlueContract.Presenter {
+import android.util.Log;
+
+import com.sye.base.network.BackendService;
+import com.sye.base.network.RestEvent;
+import com.sye.base.network.ServiceNotifier;
+
+public class BluePresenter implements BlueContract.Presenter, ServiceNotifier {
 
     private BlueContract.View view;
 
@@ -24,7 +28,7 @@ public class BluePresenter implements BlueContract.Presenter {
     @Override
     public void fetchData() {
         view.progress(true);
-        BackendService.createRequest(null, SN.SN_LISTS_RESPONSE);
+        new BackendService<BlueObject>(this).execute("catalogs/user");
         //Call to service, search on database, etc.
     }
 
@@ -40,6 +44,16 @@ public class BluePresenter implements BlueContract.Presenter {
 
     @Override
     public void update() {
+
+    }
+
+    @Override
+    public void onSuccess(RestEvent result) {
+        Log.i("RESULT", result.getMessage());
+    }
+
+    @Override
+    public void onFailed(RestEvent result) {
 
     }
 }

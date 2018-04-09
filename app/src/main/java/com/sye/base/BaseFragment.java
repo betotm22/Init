@@ -208,7 +208,7 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
         View snackbarView = snackbar.getView();
         snackbarView.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.success));
         ((TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text))
-                .setTextColor(getResources().getColor(R.color.text_grey));
+                .setTextColor(getResources().getColor(R.color.text_primary_dark));
         snackbar.show();
     }
 

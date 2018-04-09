@@ -21,8 +21,10 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void sendBack(String tag) {
+    public void sendBack(Object... params) {
         super.sendBack();
+
+        String tag = (String) params[0];
 
         if (tag.equals(TAG_BLUE)) {
             TAG_GREEN = addFragment(GreenFragment.newInstance(), R.id.main_fragment_container, this);

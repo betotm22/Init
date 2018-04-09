@@ -3,7 +3,9 @@ package com.sye.base.network;
 import java.io.Serializable;
 import java.util.List;
 
-public class RestEvent {
+public class RestEvent<R> {
+
+    private R result;
 
     private Serializable response;
     private List<Serializable> responseList;
@@ -12,12 +14,11 @@ public class RestEvent {
     private String message;
     private String classType;
 
-    public RestEvent(Serializable response, boolean success, int code, String message, String classType) {
-        this.response = response;
+    public RestEvent(R result, boolean success, int code, String message) {
         this.success = success;
         this.code = code;
         this.message = message;
-        this.classType = classType;
+        this.result = result;
     }
 
     public RestEvent(List<Serializable> responseList, boolean success, int code, String message, String classType) {
@@ -60,5 +61,9 @@ public class RestEvent {
 
     public List<Serializable> getResponseList() {
         return responseList;
+    }
+
+    public R getResult() {
+        return result;
     }
 }

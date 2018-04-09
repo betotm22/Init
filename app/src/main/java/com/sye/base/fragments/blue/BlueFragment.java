@@ -2,7 +2,6 @@ package com.sye.base.fragments.blue;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,7 @@ import android.view.ViewGroup;
 import com.sye.base.BaseFragment;
 import com.sye.base.R;
 import com.sye.base.network.RestEvent;
-import com.sye.base.network.SN;
+import com.sye.base.network.Endpoint;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -58,7 +57,7 @@ public class BlueFragment extends BaseFragment implements BlueContract.View {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(RestEvent event) {
         switch (event.getClassType()) {
-            case SN.SN_LISTS_RESPONSE:
+            case Endpoint.SN_LISTS_RESPONSE:
                 if (event.isSuccess())
                     showSuccess(R.string.snack_success_connection);
                 else showError(R.string.snack_error_connection);

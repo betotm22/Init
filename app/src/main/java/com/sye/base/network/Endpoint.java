@@ -1,6 +1,6 @@
 package com.sye.base.network;
 
-public class SN {
+public class Endpoint {
 
     //region SERVICE'S NAME
 
