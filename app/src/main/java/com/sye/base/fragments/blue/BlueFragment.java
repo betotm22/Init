@@ -36,7 +36,6 @@ public class BlueFragment extends BaseFragment implements BlueContract.View {
 
         root.findViewById(R.id.btn_new).setOnClickListener(view -> getCallback().sendBack(getTag()));
 
-        registerForEvent(true);
         presenter.fetchData();
 
         return root;
@@ -54,15 +53,4 @@ public class BlueFragment extends BaseFragment implements BlueContract.View {
         progress(false);
     }
 
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onEvent(RestEvent event) {
-        switch (event.getClassType()) {
-            case Endpoint.SN_LISTS_RESPONSE:
-                if (event.isSuccess())
-                    showSuccess(R.string.snack_success_connection);
-                else showError(R.string.snack_error_connection);
-                break;
-        }
-        progress(false);
-    }
 }

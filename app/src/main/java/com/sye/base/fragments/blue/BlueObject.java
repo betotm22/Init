@@ -5,7 +5,7 @@ import com.sye.base.network.GenericResponse;
 
 import java.io.Serializable;
 
-public class BlueObject extends GenericResponse implements Serializable /*Parceable*/ {
+public class BlueObject extends GenericResponse {
     @SerializedName("id")
     private String id;
     @SerializedName("cuadrilla")

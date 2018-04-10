@@ -119,7 +119,7 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
     public void onEvent(SubscriberExceptionEvent event) {
         showError(R.string.snack_error_connection, false);
         event.throwable.printStackTrace();
-        EventBus.getDefault().post(new RestEvent(false, -1, "error", "error"));
+        EventBus.getDefault().post(new RestEvent(false, -1, "error"));
     }
 
     public void setCallback(Callback callback){

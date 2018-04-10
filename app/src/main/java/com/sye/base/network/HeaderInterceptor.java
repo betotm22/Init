@@ -1,23 +1,30 @@
 package com.sye.base.network;
 
+import android.support.annotation.NonNull;
+
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class HeaderInterceptor implements Interceptor {
+class HeaderInterceptor implements Interceptor {
 
-    private String token;
+    private HashMap<String, String> headers;
 
-    public HeaderInterceptor(String token) {
-        this.token = token;
+    HeaderInterceptor(HashMap<String, String> headers) {
+        this.headers = headers;
     }
 
     @Override
-    public Response intercept(Chain chain) throws IOException {
+    public Response intercept(@NonNull Chain chain) throws IOException {
         Request.Builder builder = chain.request().newBuilder();
-        builder.addHeader("Authorization", token);
+
+        for (Map.Entry<String, String> entry : headers.entrySet()) {
+            builder.addHeader(entry.getKey(), entry.getValue());
+        }
 
         return chain.proceed(builder.build());
     }

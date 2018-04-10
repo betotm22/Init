@@ -3,16 +3,15 @@ package com.sye.base.fragments.blue;
 
 import android.util.Log;
 
-import com.sye.base.network.BackendService;
+import com.sye.base.network.RequestManager;
 import com.sye.base.network.Endpoint;
-import com.sye.base.network.RestApi;
 import com.sye.base.network.RestEvent;
-import com.sye.base.network.ServiceBuilder;
 import com.sye.base.network.ServiceNotifier;
 
-public class BluePresenter implements BlueContract.Presenter, ServiceNotifier {
+public class BluePresenter implements BlueContract.Presenter {
 
     private BlueContract.View view;
+    private RequestManager manager;
 
     BluePresenter(BlueContract.View view) {
         this.view = view;
@@ -20,19 +19,26 @@ public class BluePresenter implements BlueContract.Presenter, ServiceNotifier {
 
     @Override
     public void create() {
+        manager = RequestManager.build();
         //Init database, prepare rest, etc.
     }
 
     @Override
     public void destroy() {
+        manager.release();
         //Close database
     }
 
     @Override
     public void fetchData() {
         view.progress(true);
+        manager.setResponseListener(result -> {
 
-        new BackendService(this).execute(Endpoint.SN_SERVICE);
+            BlueObject obj = (BlueObject) result.getResponse();
+            Log.i("RESULT", obj.getConsumo());
+
+        });
+        manager.execute(Endpoint.EP_SERVICE);
         //Call to service, search on database, etc.
     }
 
@@ -48,16 +54,6 @@ public class BluePresenter implements BlueContract.Presenter, ServiceNotifier {
 
     @Override
     public void update() {
-
-    }
-
-    @Override
-    public void onSuccess(RestEvent result) {
-        Log.i("RESULT", ((BlueObject)result.getResponse()).getConsumo());
-    }
-
-    @Override
-    public void onFailed(RestEvent result) {
 
     }
 }
