@@ -36,7 +36,7 @@ public class BluePresenter implements BlueContract.Presenter {
 
             BlueObject obj = (BlueObject) result.getResponse();
             Log.i("RESULT", obj.getConsumo());
-
+            view.progress(false);
         });
         manager.execute(Endpoint.EP_SERVICE);
         //Call to service, search on database, etc.

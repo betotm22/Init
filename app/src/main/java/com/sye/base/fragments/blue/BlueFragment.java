@@ -50,7 +50,7 @@ public class BlueFragment extends BaseFragment implements BlueContract.View {
 
     @Override
     public void showData() {
-        progress(false);
+
     }
 
 }
