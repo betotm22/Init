@@ -8,14 +8,10 @@ public class Set {
     //region URLs
 
     public static final String BASE_URL = BuildConfig.BASE_URL;
-    public static final String AMAZON_URL = BuildConfig.AMAZON_URL;
 
     //endregion
 
     //region CONSTANTS
-
-    public static final String POOL_ID = BuildConfig.POOL_ID;
-    public static final String BUCKET = BuildConfig.BUCKET;
 
     /**
      * Pattern for a regular e-mail

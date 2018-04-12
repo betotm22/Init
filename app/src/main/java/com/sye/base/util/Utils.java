@@ -175,4 +175,11 @@ public class Utils {
         }
 
     }
+
+    public static class Components {
+
+        //IntentService
+
+        //BroadcastReceiver
+    }
 }
