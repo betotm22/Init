@@ -12,16 +12,25 @@ import java.util.List;
 
 import retrofit2.Response;
 
-
 public class RequestManager extends AsyncTask<Serializable, Void, RestEvent> {
 
-    private ServiceNotifier callback;
+    //region DON'T TOUCH IT
+
+    //region VARIABLES
+
     private RestApi service;
+
+    private ServiceNotifier callback;
     private Serializable request;
+
     private boolean voidResponse = false;
     private boolean listResponse = false;
 
     private static RequestManager instance;
+
+    //endregion
+
+    //region METHODS
 
     private RequestManager() {
         service = BaseClient.getApiService(RestApi.class);
@@ -58,6 +67,10 @@ public class RequestManager extends AsyncTask<Serializable, Void, RestEvent> {
         instance = null;
     }
 
+    //endregion
+
+    //region REQUEST
+
     @Override
     protected RestEvent doInBackground(Serializable... params) {
 
@@ -91,6 +104,10 @@ public class RequestManager extends AsyncTask<Serializable, Void, RestEvent> {
             callback.onResponse(restEvent);
         }
     }
+
+    //endregion
+
+    //endregion
 
     private Response<? extends GenericResponse>
     handleObjectRequest(String path) throws IOException {
