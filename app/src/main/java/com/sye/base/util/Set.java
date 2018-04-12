@@ -58,4 +58,14 @@ public class Set {
     public static final String TAG_STYLE_SEMI = "semi";
 
     //endregion
+
+    //region STATUS CODES
+
+    public static final int CODE_SUCCESS = 200;
+    public static final int CODE_CREATED = 201;
+    public static final int CODE_BAD_REQUEST = 400;
+    public static final int CODE_NOT_FOUND = 404;
+    public static final int CODE_SERVER_ERROR = 500;
+
+    //endregion
 }

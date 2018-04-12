@@ -1,11 +1,17 @@
 package com.sye.base.fragments.blue;
 
-import com.sye.base.network.BackendService;
-import com.sye.base.network.SN;
+
+import android.util.Log;
+
+import com.sye.base.network.RequestManager;
+import com.sye.base.network.Endpoint;
+import com.sye.base.network.RestEvent;
+import com.sye.base.network.ServiceNotifier;
 
 public class BluePresenter implements BlueContract.Presenter {
 
     private BlueContract.View view;
+    private RequestManager manager;
 
     BluePresenter(BlueContract.View view) {
         this.view = view;
@@ -13,18 +19,26 @@ public class BluePresenter implements BlueContract.Presenter {
 
     @Override
     public void create() {
+        manager = RequestManager.build();
         //Init database, prepare rest, etc.
     }
 
     @Override
     public void destroy() {
+        manager.release();
         //Close database
     }
 
     @Override
     public void fetchData() {
         view.progress(true);
-        BackendService.createRequest(null, SN.SN_LISTS_RESPONSE);
+        manager.setResponseListener(result -> {
+
+            BlueObject obj = (BlueObject) result.getResponse();
+            Log.i("RESULT", obj.getConsumo());
+            view.progress(false);
+        });
+        manager.execute(Endpoint.EP_SERVICE);
         //Call to service, search on database, etc.
     }
 

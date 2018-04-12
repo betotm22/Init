@@ -119,7 +119,7 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
     public void onEvent(SubscriberExceptionEvent event) {
         showError(R.string.snack_error_connection, false);
         event.throwable.printStackTrace();
-        EventBus.getDefault().post(new RestEvent(false, -1, "error", "error"));
+        EventBus.getDefault().post(new RestEvent(false, -1, "error"));
     }
 
     public void setCallback(Callback callback){
@@ -208,7 +208,7 @@ public class BaseFragment extends Fragment implements Callback, BaseContractView
         View snackbarView = snackbar.getView();
         snackbarView.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.success));
         ((TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text))
-                .setTextColor(getResources().getColor(R.color.text_grey));
+                .setTextColor(getResources().getColor(R.color.text_primary_dark));
         snackbar.show();
     }
 

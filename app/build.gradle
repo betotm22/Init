@@ -11,7 +11,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
 
-        buildConfigField "String", "BASE_URL", '"http://ec2-34-237-100-2.compute-1.amazonaws.com/siapa/api/"'
+        buildConfigField "String", "BASE_URL", '"http://ec2-34-237-100-2.compute-1.amazonaws.com/siapa/api-v2/"'
     }
 
     buildTypes {
