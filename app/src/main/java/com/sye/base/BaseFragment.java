@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sye.base.network.RestEvent;
+import com.sye.base.network.bases.RestEvent;
 import com.sye.base.util.BaseContractView;
 import com.sye.base.util.Callback;
 import com.sye.base.util.Fonts;

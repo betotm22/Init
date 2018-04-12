@@ -3,6 +3,10 @@ package com.sye.base.network;
 import android.os.AsyncTask;
 
 import com.sye.base.fragments.blue.BlueObject;
+import com.sye.base.network.bases.GenericResponse;
+import com.sye.base.network.bases.RestEvent;
+import com.sye.base.network.bases.ServiceNotifier;
+import com.sye.base.network.config.BaseClient;
 import com.sye.base.util.Set;
 
 import java.io.IOException;

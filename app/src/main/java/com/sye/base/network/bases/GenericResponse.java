@@ -1,4 +1,4 @@
-package com.sye.base.network;
+package com.sye.base.network.bases;
 
 import com.google.gson.annotations.SerializedName;
 

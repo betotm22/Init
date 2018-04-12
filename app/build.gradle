@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.sye.base"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -15,9 +15,15 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            buildConfigField "String", "BASE_URL", '"http://ec2-34-237-100-2.compute-1.amazonaws.com/siapa/api-v2/"'
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
             buildConfigField "String", "BASE_URL", '"https://www.syesoftware.com/api-pro/"'
         }
     }
@@ -29,33 +35,33 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
     //region GOOGLE SUPPORT
-    compile 'com.android.support:appcompat-v7:27.1.0'
-    compile 'com.android.support:design:27.1.0'
-    compile 'com.android.support:support-vector-drawable:27.1.0'
-    compile 'com.android.support:cardview-v7:27.1.0'
-    compile 'com.android.support:recyclerview-v7:27.1.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:support-vector-drawable:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
     //endregion
 
     //region SERVICES
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.google.code.gson:gson:2.8.2'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
     //endregion
 
     //region UTILS
-    compile 'org.greenrobot:eventbus:3.1.1'
-    compile 'com.mobsandgeeks:android-saripaar:2.0.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.0'
 
     //endregion
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }

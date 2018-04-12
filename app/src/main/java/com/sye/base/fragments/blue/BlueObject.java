@@ -1,9 +1,7 @@
 package com.sye.base.fragments.blue;
 
 import com.google.gson.annotations.SerializedName;
-import com.sye.base.network.GenericResponse;
-
-import java.io.Serializable;
+import com.sye.base.network.bases.GenericResponse;
 
 public class BlueObject extends GenericResponse {
     @SerializedName("id")

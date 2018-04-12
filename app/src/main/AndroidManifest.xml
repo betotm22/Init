@@ -25,7 +25,6 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".network.RequestManager" />
     </application>
 
 </manifest>
