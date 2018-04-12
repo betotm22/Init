@@ -5,8 +5,6 @@ import android.util.Log;
 
 import com.sye.base.network.RequestManager;
 import com.sye.base.network.Endpoint;
-import com.sye.base.network.RestEvent;
-import com.sye.base.network.ServiceNotifier;
 
 public class BluePresenter implements BlueContract.Presenter {
 

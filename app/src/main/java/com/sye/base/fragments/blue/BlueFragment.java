@@ -8,11 +8,6 @@ import android.view.ViewGroup;
 
 import com.sye.base.BaseFragment;
 import com.sye.base.R;
-import com.sye.base.network.RestEvent;
-import com.sye.base.network.Endpoint;
-
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 public class BlueFragment extends BaseFragment implements BlueContract.View {
 

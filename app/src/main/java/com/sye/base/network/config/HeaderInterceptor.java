@@ -1,4 +1,4 @@
-package com.sye.base.network;
+package com.sye.base.network.config;
 
 import android.support.annotation.NonNull;
 
